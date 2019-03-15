@@ -3,18 +3,18 @@
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- '(default ((t (:foreground "#fff" :background "#171717"))))
+ '(default ((t (:foreground "#fff" :background "#000000"))))
  '(font-lock-keyword-face ((t (:foreground "#27c"))))
- '(font-lock-variable-name-face ((t (:foreground "#7ce"))))
- '(font-lock-function-name-face ((t (:foreground "#7ce"))))
+ '(font-lock-variable-name-face ((t (:foreground "#7cf"))))
+ '(font-lock-function-name-face ((t (:foreground "#7cf"))))
  '(font-lock-constant-face ((t (:foreground "#98d"))))
  '(font-lock-string-face ((t (:foreground "#98d"))))
 
  '(font-lock-comment-delimiter-face ((t (:foreground "#686868"))))
  '(font-lock-comment-face ((t (:foreground "#686868"))))
 
- '(region ((t (:background "#444"))))
- '(fringe ((t (:foreground "#333" :background "#333"))))
+ '(region ((t (:background "#333"))))
+ '(fringe ((t (:foreground "#000000" :background "#000000"))))
  '(mode-line ((t (:foreground "#ddd" :background "#4a4a4a"))))
  '(mode-line-inactive ((t (:foreground "#777" :background "#282828"))))
  '(vertical-border ((t (:foreground "#2d2d2d"))))
@@ -99,6 +99,10 @@
 
 ; Disable Auto-Indent
 (when (fboundp 'electric-indent-mode ) (electric-indent-mode -1))
+
+; Use Bash Shell
+(setq shell-file-name "bash")
+(setq shell-command-switch "-ic")
 
 ; Tab Length
 (setq-default c-basic-offset 2)
