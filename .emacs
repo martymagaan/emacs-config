@@ -4,32 +4,28 @@
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  '(default ((t (:foreground "#fff" :background "#000000"))))
- '(font-lock-keyword-face ((t (:foreground "#27c"))))
- '(font-lock-variable-name-face ((t (:foreground "#7cf"))))
- '(font-lock-function-name-face ((t (:foreground "#7cf"))))
- '(font-lock-constant-face ((t (:foreground "#98d"))))
- '(font-lock-string-face ((t (:foreground "#98d"))))
-
+ '(escape-glyph ((t (:foreground "#0f0"))))
+ '(font-lock-builtin-face ((t (:foreground "#ccc"))))
  '(font-lock-comment-delimiter-face ((t (:foreground "#686868"))))
  '(font-lock-comment-face ((t (:foreground "#686868"))))
-
- '(region ((t (:background "#333"))))
- '(fringe ((t (:foreground "#000000" :background "#000000"))))
- '(mode-line ((t (:foreground "#ddd" :background "#4a4a4a"))))
- '(mode-line-inactive ((t (:foreground "#777" :background "#282828"))))
- '(vertical-border ((t (:foreground "#2d2d2d"))))
-
+ '(font-lock-constant-face ((t (:foreground "#98d"))))
  '(font-lock-doc-face ((t (:foreground "#888"))))
+ '(font-lock-function-name-face ((t (:foreground "#7cf"))))
+ '(font-lock-keyword-face ((t (:foreground "#27c"))))
  '(font-lock-preprocessor-face ((t (:foreground "#aaa"))))
+ '(font-lock-string-face ((t (:foreground "#98d"))))
+ '(font-lock-variable-name-face ((t (:foreground "#7cf"))))
  '(font-lock-warning-face ((t (:foreground "#f00"))))
- '(font-lock-builtin-face ((t (:foreground "#ccc"))))
-
+ '(fringe ((t (:foreground "#000000" :background "#000000"))))
+ '(homoglyph ((t (:foreground "#0f0"))))
  '(link ((t (:foreground "#0f0"))))
  '(link-visited ((t (:foreground "#0f0"))))
+ '(minibuffer-prompt ((t (:foreground "#0f0"))))
+ '(mode-line ((t (:foreground "#ddd" :background "#4a4a4a"))))
+ '(mode-line-inactive ((t (:foreground "#777" :background "#282828"))))
+ '(region ((t (:background "#333"))))
  '(tooltip ((t (:background "#333"))))
- '(escape-glyph ((t (:foreground "#0f0"))))
- '(homoglyph ((t (:foreground "#0f0"))))
- '(minibuffer-prompt ((t (:foreground "#0f0")))))
+ '(vertical-border ((t (:foreground "#111")))))
 
 (require 'package)
 
@@ -61,7 +57,22 @@
 (windmove-default-keybindings)
 
 ; Window Layout
-(defun wins ()
+(defun win1 ()
+  (interactive)
+  (split-window-below)
+  (other-window 1)
+  (split-window-below)
+  (delete-window))
+
+(defun win2 ()
+  (interactive)
+  (win1)
+  (split-window-right)
+  (other-window 2)
+  (split-window-right)
+  (other-window 2))
+
+(defun win3 ()
   (interactive)
   (split-window-right)
   (split-window-right)
@@ -139,8 +150,8 @@
 (defun h-scroll-left()
   (interactive)
   (scroll-right 5))
-(global-set-key [?\C-.] 'h-scroll-right)
-(global-set-key [?\C-,] 'h-scroll-left)
+(global-set-key (kbd "M-p") 'h-scroll-right)
+(global-set-key (kbd "M-n") 'h-scroll-left)
 
 ; Enable clipboard pasting
 (setq x-select-enable-clipboard t)
@@ -155,14 +166,14 @@
  '(ansi-color-names-vector
    ["#242424" "#e5786d" "#95e454" "#cae682" "#8ac6f2" "#333366" "#ccaa8f" "#f6f3e8"])
  '(initial-frame-alist (quote ((fullscreen . maximized))))
- '(package-selected-packages (quote (web-mode)))
+ '(package-selected-packages (quote (free-keys web-mode)))
  '(put (quote scroll-left) t)
  '(safe-local-variable-values
    (quote
-     ((eval when
-       (require
-         (quote rainbow-mode)
-           nil t)
-            (rainbow-mode 1)))))
+    ((eval when
+           (require
+            (quote rainbow-mode)
+            nil t)
+           (rainbow-mode 1)))))
  '(scroll-conservatively 100)
  '(truncate-lines t))
