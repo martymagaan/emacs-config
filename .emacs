@@ -27,18 +27,24 @@
  '(tooltip ((t (:background "#333"))))
  '(vertical-border ((t (:foreground "#111")))))
 
-; Melpa
-(require 'package)
-(add-to-list 'package-archives '("melpa" . "http://melpa.org/packages/"))
-(package-initialize)
-
 ; Neo Tree
-(add-to-list 'load-path ".emacs.d/neotree")
+(add-to-list 'load-path "~/.emacs.d/neotree")
 (require 'neotree)
 (global-set-key [f8] 'neotree-toggle)
 (setq neo-smart-open t)
 
+; AutoComplete
+(add-to-list 'load-path "~/.emacs.d/popup")
+(add-to-list 'load-path "~/.emacs.d/auto-complete")
+(require 'auto-complete)
+(require 'auto-complete-config)
+(ac-config-default)
+(global-auto-complete-mode t)
+(setq ac-auto-show-menu 0)
+(setq ac-delay 0)
+
 ; Web Mode
+(add-to-list 'load-path "~/.emacs.d/web-mode")
 (require 'web-mode)
 (add-to-list 'auto-mode-alist '("\\.phtml\\'" . web-mode))
 (add-to-list 'auto-mode-alist '("\\.php\\'" . web-mode))
@@ -89,12 +95,6 @@
   (other-window 2)
   (split-window-below)
   (other-window -2))
-
-; AutoComplete
-(ac-config-default)
-(global-auto-complete-mode t)
-(setq ac-auto-show-menu 0)
-(setq ac-delay 0)
 
 ; Turn Off Auto Backup
 (setq make-backup-files nil)
