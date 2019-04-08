@@ -27,12 +27,15 @@
  '(tooltip ((t (:background "#333"))))
  '(vertical-border ((t (:foreground "#111")))))
 
-(require 'package)
-
 ; Melpa
+(require 'package)
 (add-to-list 'package-archives '("melpa" . "http://melpa.org/packages/"))
-
 (package-initialize)
+
+; Neo Tree
+(add-to-list 'load-path ".emacs.d/neotree")
+(require 'neotree)
+(global-set-key [f8] 'neotree-toggle)
 
 ; Web Mode
 (require 'web-mode)
