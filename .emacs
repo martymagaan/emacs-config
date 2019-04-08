@@ -36,6 +36,7 @@
 (add-to-list 'load-path ".emacs.d/neotree")
 (require 'neotree)
 (global-set-key [f8] 'neotree-toggle)
+(setq neo-smart-open t)
 
 ; Web Mode
 (require 'web-mode)
