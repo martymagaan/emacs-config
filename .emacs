@@ -161,7 +161,9 @@
 (require 'neotree)
 (global-set-key [f8] 'neotree-toggle)
 (setq neo-smart-open t)
+(neotree-toggle)
 (neotree-hidden-file-toggle)
+(other-window -1)
 
 ; Free Keys
 (add-to-list 'load-path "~/.emacs.d/free-keys")
