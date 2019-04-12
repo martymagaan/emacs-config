@@ -27,32 +27,6 @@
  '(tooltip ((t (:background "#333"))))
  '(vertical-border ((t (:foreground "#111")))))
 
-; Neo Tree
-(add-to-list 'load-path "~/.emacs.d/neotree")
-(require 'neotree)
-(global-set-key [f8] 'neotree-toggle)
-(setq neo-smart-open t)
-
-; AutoComplete
-(add-to-list 'load-path "~/.emacs.d/popup")
-(add-to-list 'load-path "~/.emacs.d/auto-complete")
-(require 'auto-complete)
-(require 'auto-complete-config)
-(ac-config-default)
-(global-auto-complete-mode t)
-(setq ac-auto-show-menu 0)
-(setq ac-delay 0)
-
-; Web Mode
-(add-to-list 'load-path "~/.emacs.d/web-mode")
-(require 'web-mode)
-(add-to-list 'auto-mode-alist '("\\.phtml\\'" . web-mode))
-(add-to-list 'auto-mode-alist '("\\.php\\'" . web-mode))
-(add-to-list 'auto-mode-alist '("\\.html\\'" . web-mode))
-(add-to-list 'auto-mode-alist '("\\.html?\\'" . web-mode))
-(add-to-list 'auto-mode-alist '("\\.ts?\\'" . web-mode))
-(add-to-list 'auto-mode-alist '("\\.vue?\\'" . web-mode))
-
 ; Scrolling Speed
 (defun scroll-up-slow () (interactive)(scroll-up 8))
 (defun scroll-down-slow () (interactive)(scroll-down 8))
@@ -181,3 +155,33 @@
            (rainbow-mode 1)))))
  '(scroll-conservatively 100)
  '(truncate-lines t))
+
+; Neo Tree
+(add-to-list 'load-path "~/.emacs.d/neotree")
+(require 'neotree)
+(global-set-key [f8] 'neotree-toggle)
+(setq neo-smart-open t)
+
+; Free Keys
+(add-to-list 'load-path "~/.emacs.d/free-keys")
+(require 'neotree)
+
+; AutoComplete
+(add-to-list 'load-path "~/.emacs.d/popup")
+(add-to-list 'load-path "~/.emacs.d/auto-complete")
+(require 'auto-complete)
+(require 'auto-complete-config)
+(ac-config-default)
+(global-auto-complete-mode t)
+(setq ac-auto-show-menu 0)
+(setq ac-delay 0)
+
+; Web Mode
+(add-to-list 'load-path "~/.emacs.d/web-mode")
+(require 'web-mode)
+(add-to-list 'auto-mode-alist '("\\.phtml\\'" . web-mode))
+(add-to-list 'auto-mode-alist '("\\.php\\'" . web-mode))
+(add-to-list 'auto-mode-alist '("\\.html\\'" . web-mode))
+(add-to-list 'auto-mode-alist '("\\.html?\\'" . web-mode))
+(add-to-list 'auto-mode-alist '("\\.ts?\\'" . web-mode))
+(add-to-list 'auto-mode-alist '("\\.vue?\\'" . web-mode))
