@@ -167,7 +167,7 @@
 
 ; Free Keys
 (add-to-list 'load-path "~/.emacs.d/free-keys")
-(require 'neotree)
+(require 'free-keys)
 
 ; AutoComplete
 (add-to-list 'load-path "~/.emacs.d/popup")
