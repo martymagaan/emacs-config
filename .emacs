@@ -39,6 +39,7 @@
 
 ; Easy Window Switching
 (windmove-default-keybindings)
+(setq windmove-wrap-around t)
 
 ; Window Layout
 (defun win1 ()
@@ -55,20 +56,6 @@
   (other-window 2)
   (split-window-right)
   (other-window 2))
-
-(defun win3 ()
-  (interactive)
-  (split-window-right)
-  (split-window-right)
-  (split-window-below)
-  (other-window 3)
-  (delete-window)
-  (other-window 2)
-  (split-window-right)
-  (split-window-below)
-  (other-window 2)
-  (split-window-below)
-  (other-window -2))
 
 ; Turn Off Auto Backup
 (setq make-backup-files nil)
@@ -88,10 +75,6 @@
 
 ; Disable Auto-Indent
 (when (fboundp 'electric-indent-mode ) (electric-indent-mode -1))
-
-; Use Bash Shell
-(setq shell-file-name "bash")
-(setq shell-command-switch "-ic")
 
 ; Tab Length
 (setq-default c-basic-offset 2)
