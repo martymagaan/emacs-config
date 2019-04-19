@@ -101,8 +101,8 @@
 
 ; Slower Mouse Scrolling
 (setq mouse-wheel-scroll-amount '(2 ((shift) . 2)))
-    (setq mouse-wheel-follow-mouse 't)
-    (setq scroll-step 1)
+  (setq mouse-wheel-follow-mouse 't)
+  (setq scroll-step 1)
 
 ; Horizontal mouse scroll
 (defun h-scroll-right()
@@ -142,6 +142,7 @@
 ; Neo Tree
 (add-to-list 'load-path "~/.emacs.d/lib/neotree")
 (require 'neotree)
+(setq neo-theme 'nerd)
 (global-set-key [f8] 'neotree-toggle)
 (setq neo-smart-open t)
 (neotree-toggle)
