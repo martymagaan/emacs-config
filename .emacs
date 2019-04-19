@@ -140,7 +140,7 @@
  '(truncate-lines t))
 
 ; Neo Tree
-(add-to-list 'load-path "~/.emacs.d/neotree")
+(add-to-list 'load-path "~/.emacs.d/lib/neotree")
 (require 'neotree)
 (global-set-key [f8] 'neotree-toggle)
 (setq neo-smart-open t)
@@ -148,13 +148,9 @@
 (neotree-hidden-file-toggle)
 (other-window -1)
 
-; Free Keys
-(add-to-list 'load-path "~/.emacs.d/free-keys")
-(require 'free-keys)
-
 ; AutoComplete
-(add-to-list 'load-path "~/.emacs.d/popup")
-(add-to-list 'load-path "~/.emacs.d/auto-complete")
+(add-to-list 'load-path "~/.emacs.d/lib/popup")
+(add-to-list 'load-path "~/.emacs.d/lib/auto-complete")
 (require 'auto-complete)
 (require 'auto-complete-config)
 (ac-config-default)
@@ -163,7 +159,7 @@
 (setq ac-delay 0)
 
 ; Web Mode
-(add-to-list 'load-path "~/.emacs.d/web-mode")
+(add-to-list 'load-path "~/.emacs.d/lib/web-mode")
 (require 'web-mode)
 (add-to-list 'auto-mode-alist '("\\.phtml\\'" . web-mode))
 (add-to-list 'auto-mode-alist '("\\.php\\'" . web-mode))
@@ -171,3 +167,15 @@
 (add-to-list 'auto-mode-alist '("\\.html?\\'" . web-mode))
 (add-to-list 'auto-mode-alist '("\\.ts?\\'" . web-mode))
 (add-to-list 'auto-mode-alist '("\\.vue?\\'" . web-mode))
+
+; General package path
+(add-to-list 'load-path "~/.emacs.d/lib")
+
+; Free Keys
+(require 'free-keys)
+
+; Indent Hint
+(require 'highlight-indent-guides)
+(add-hook 'prog-mode-hook 'highlight-indent-guides-mode)
+(setq highlight-indent-guides-method 'character)
+(setq highlight-indent-guides-auto-character-face-perc 17)
