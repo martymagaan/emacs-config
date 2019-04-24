@@ -3,11 +3,11 @@
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- '(default ((t (:foreground "#fff" :background "#000000"))))
+ '(default ((t (:foreground "#fff"))))
  '(escape-glyph ((t (:foreground "#0f0"))))
  '(font-lock-builtin-face ((t (:foreground "#ccc"))))
- '(font-lock-comment-delimiter-face ((t (:foreground "#686868"))))
- '(font-lock-comment-face ((t (:foreground "#686868"))))
+ '(font-lock-comment-delimiter-face ((t (:foreground "#da3"))))
+ '(font-lock-comment-face ((t (:foreground "#da3"))))
  '(font-lock-constant-face ((t (:foreground "#98d"))))
  '(font-lock-doc-face ((t (:foreground "#888"))))
  '(font-lock-function-name-face ((t (:foreground "#7cf"))))
@@ -17,6 +17,7 @@
  '(font-lock-variable-name-face ((t (:foreground "#7cf"))))
  '(font-lock-warning-face ((t (:foreground "#f00"))))
  '(fringe ((t (:foreground "#000000" :background "#000000"))))
+ '(linum ((t (:foreground "#a33"))))
  '(homoglyph ((t (:foreground "#0f0"))))
  '(link ((t (:foreground "#0f0"))))
  '(link-visited ((t (:foreground "#0f0"))))
@@ -25,7 +26,12 @@
  '(mode-line-inactive ((t (:foreground "#777" :background "#282828"))))
  '(region ((t (:background "#333"))))
  '(tooltip ((t (:background "#333"))))
- '(vertical-border ((t (:foreground "#111")))))
+ '(vertical-border ((t (:foreground "#333"))))
+ '(col-highlight ((t (:background "color-233"))))
+ '(hl-line ((t (:background "color-233"))))
+ '(lazy-highlight ((t (:background "black" :foreground "white" :underline t))))
+ '(neo-dir-link-face ((t (:foreground "#7cf"))))
+ '(neo-file-link-face ((t (:foreground "#fff")))))
 
 ; Scrolling Speed
 (defun scroll-up-slow () (interactive)(scroll-up 8))
@@ -179,4 +185,4 @@
 (require 'highlight-indent-guides)
 (add-hook 'prog-mode-hook 'highlight-indent-guides-mode)
 (setq highlight-indent-guides-method 'character)
-(setq highlight-indent-guides-auto-character-face-perc 17)
+(set-face-foreground 'highlight-indent-guides-character-face "#555")
