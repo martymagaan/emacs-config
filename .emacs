@@ -165,16 +165,6 @@
 (setq ac-auto-show-menu 0)
 (setq ac-delay 0)
 
-; Web Mode
-(add-to-list 'load-path "~/.emacs.d/lib/web-mode")
-(require 'web-mode)
-(add-to-list 'auto-mode-alist '("\\.phtml\\'" . web-mode))
-(add-to-list 'auto-mode-alist '("\\.php\\'" . web-mode))
-(add-to-list 'auto-mode-alist '("\\.html\\'" . web-mode))
-(add-to-list 'auto-mode-alist '("\\.html?\\'" . web-mode))
-(add-to-list 'auto-mode-alist '("\\.ts?\\'" . web-mode))
-(add-to-list 'auto-mode-alist '("\\.vue?\\'" . web-mode))
-
 ; General package path
 (add-to-list 'load-path "~/.emacs.d/lib")
 
