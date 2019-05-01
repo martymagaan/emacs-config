@@ -3,35 +3,39 @@
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- '(default ((t (:foreground "#fff"))))
+ '(default ((t (:foreground "#7cf"))))
  '(escape-glyph ((t (:foreground "#0f0"))))
- '(font-lock-builtin-face ((t (:foreground "#ccc"))))
- '(font-lock-comment-delimiter-face ((t (:foreground "#da3"))))
- '(font-lock-comment-face ((t (:foreground "#da3"))))
+ '(font-lock-builtin-face ((t (:foreground "#7fc"))))
+ '(font-lock-comment-delimiter-face ((t (:foreground "#8ac"))))
+ '(font-lock-comment-face ((t (:foreground "#8ac"))))
  '(font-lock-constant-face ((t (:foreground "#98d"))))
- '(font-lock-doc-face ((t (:foreground "#888"))))
- '(font-lock-function-name-face ((t (:foreground "#7cf"))))
+ '(font-lock-doc-face ((t (:foreground "#bac"))))
+ '(font-lock-function-name-face ((t (:foreground "#7fc"))))
  '(font-lock-keyword-face ((t (:foreground "#27c"))))
  '(font-lock-preprocessor-face ((t (:foreground "#aaa"))))
- '(font-lock-string-face ((t (:foreground "#98d"))))
- '(font-lock-variable-name-face ((t (:foreground "#7cf"))))
+ '(font-lock-string-face ((t (:foreground "#edc"))))
+ '(font-lock-variable-name-face ((t (:foreground "#7fc"))))
  '(font-lock-warning-face ((t (:foreground "#f00"))))
  '(fringe ((t (:foreground "#000000" :background "#000000"))))
- '(linum ((t (:foreground "#a33"))))
+ '(linum ((t (:foreground "#444"))))
  '(homoglyph ((t (:foreground "#0f0"))))
  '(link ((t (:foreground "#0f0"))))
  '(link-visited ((t (:foreground "#0f0"))))
  '(minibuffer-prompt ((t (:foreground "#0f0"))))
- '(mode-line ((t (:foreground "#ddd" :background "#4a4a4a"))))
- '(mode-line-inactive ((t (:foreground "#777" :background "#282828"))))
- '(region ((t (:background "#333"))))
+ '(mode-line ((t (:foreground "#ddd" :background "#2b2b2b"))))
+ '(mode-line-inactive ((t (:foreground "#777" :background "#222"))))
+ '(region ((t (:background "#181818"))))
  '(tooltip ((t (:background "#333"))))
  '(vertical-border ((t (:foreground "#333"))))
  '(col-highlight ((t (:background "color-233"))))
  '(hl-line ((t (:background "color-233"))))
  '(lazy-highlight ((t (:background "black" :foreground "white" :underline t))))
- '(neo-dir-link-face ((t (:foreground "#7cf"))))
+ '(neo-dir-link-face ((t (:foreground "#7fc"))))
  '(neo-file-link-face ((t (:foreground "#fff")))))
+
+; Set symbol for the border
+(set-display-table-slot standard-display-table
+  'vertical-border (make-glyph-code ?│))
 
 ; Scrolling Speed
 (defun scroll-up-slow () (interactive)(scroll-up 8))
@@ -148,7 +152,7 @@
 ; Neo Tree
 (add-to-list 'load-path "~/.emacs.d/lib/neotree")
 (require 'neotree)
-(setq neo-theme 'nerd)
+(setq neo-theme 'ascii)
 (global-set-key [f8] 'neotree-toggle)
 (setq neo-smart-open t)
 (neotree-toggle)
@@ -175,4 +179,8 @@
 (require 'highlight-indent-guides)
 (add-hook 'prog-mode-hook 'highlight-indent-guides-mode)
 (setq highlight-indent-guides-method 'character)
-(set-face-foreground 'highlight-indent-guides-character-face "#555")
+(set-face-foreground 'highlight-indent-guides-character-face "#333")
+
+; PHP Mode
+(add-to-list 'load-path "~/.emacs.d/lib/php-mode")
+(require 'php-mode)
